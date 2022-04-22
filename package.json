@@ -1,0 +1,25 @@
+{
+  "name": "plugin-outbound-sms",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "flex-plugin pre-script-check"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.4",
+    "@emotion/styled": "^10.0.4",
+    "dotenv-webpack": "^7.1.0",
+    "flex-dev-utils": "^4.3.4",
+    "flex-plugin": "1.1.1",
+    "flex-plugin-scripts": "4.1.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-scripts": "1.1.5"
+  },
+  "devDependencies": {
+    "@twilio/flex-ui": "^1.8.2",
+    "react-app-rewire-flex-plugin": "^1.5.0",
+    "react-app-rewired": "1.6.2",
+    "react-test-renderer": "16.5.2"
+  }
+}
