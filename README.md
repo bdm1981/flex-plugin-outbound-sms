@@ -1,31 +1,26 @@
-# Your custom Twilio Flex Plugin
+# Outbound Initiated SMS
 
-Twilio Flex Plugins allow you to customize the appearance and behavior of [Twilio Flex](https://www.twilio.com/flex). If you want to learn more about the capabilities and how to use the API, check out our [Flex documentation](https://www.twilio.com/docs/flex).
+This plugin allows Twilio Flex agents to initiate an outbound converations. The plugin works leverages several Twilio Functions to orchestrate creating a new task.
+
+![Componenet Screenshot](/screenshots/outbound-component.png?raw=true "Componenet Screenshot")
+
+## Prerequisites
+
+1. Install the Flex Plugin for Twilio CLI. [Instructions](https://www.twilio.com/docs/flex/developer/plugins/cli/install)
 
 ## Setup
 
-Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com). We support Node >= 10.12 (and recommend the _even_ versions of Node). Afterwards, install the dependencies by running `npm install`:
+1. copy or rename the .env_sample to .env. 
+1. Set the FLEX_APP_FUNCTIONS_URL to the Serverless Runtime domain that is hosting the support Twilio Functions
 
+## Deploy
+
+Run the following command
 ```bash
-cd 
-
-# If you use npm
-npm install
+twilio flex:plugins:deploy --major --changelog "Notes for this version" --description "Functionality of the plugin" 
 ```
 
-Next, please install the [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart) by running:
-
+Once deployed run the following command to release the command
 ```bash
-brew tap twilio/brew && brew install twilio
+twilio flex:plugins:release --plugin example-plugin@1.0.0 --plugin additional-plugin@2.1.0 --name "Example 1" --description "Demonstrating use of twilio flex:plugins:release"
 ```
-
-Finally, install the [Flex Plugin extension](https://github.com/twilio-labs/plugin-flex/tree/v1-beta) for the Twilio CLI:
-
-```bash
-twilio plugins:install @twilio-labs/plugin-flex@beta
-```
-
-## Development
-
-Run `twilio flex:plugins --help` to see all the commands we currently support. For further details on Flex Plugins refer to our documentation on the [Twilio Docs](https://www.twilio.com/docs/flex/developer/plugins/cli) page.
-
